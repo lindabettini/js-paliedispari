@@ -23,37 +23,45 @@ const max = 5;
 const victory = 'Hai vinto!';
 const defeat = 'Hai perso!';
 
-const cpuNumber = randomNumber(min, max);
+
 
 // ° Collego eventi a Play Button
 playBtn.addEventListener('click', function() {
 
+    // ° Prendo Gamer Number e genero Cpu Number
+    const cpuNumber = randomNumber(min, max);
     const gamerNumber = parseInt(numbField.value);
     const chooseValue = chooseField.value;
 
-    let sum = cpuNumber + gamerNumber;
-    
+    // & Validazione Gamer Number
+    if (gamerNumber <= 0 || gamerNumber > 5) {
+        alert('Numero non valido, inserisci un numero da 1 a 5');
+    } else {
+        
+        let sum = cpuNumber + gamerNumber;        
+
+        // ° Determino il vincitore e stampo in pagina
+        switch(chooseValue) {
+            case 'odd':
+                if (!isEven(sum)){
+                    winnerParagraph.innerText = victory;
+                } else if (isEven(sum)){
+                    winnerParagraph.innerText = defeat;          
+                }
+                break;
+            case 'even':
+                if (isEven(sum)){
+                    winnerParagraph.innerText = victory;
+                } else if (!isEven(sum)) {
+                    winnerParagraph.innerText = defeat;
+                }
+                break;
+        }
+
     cpuParagraph.innerText = 'Il computer ha giocato:' + ' ' + cpuNumber;
     sumParagraph.innerText = 'Il totale è:' + ' ' + sum;
 
-    isEven(sum);
-    // ° Determino il vincitore
-    switch(chooseValue) {
-        case 'odd':
-            if (!isEven(sum)){
-                winnerParagraph.innerText = victory;
-            } else if (isEven(sum)){
-                winnerParagraph.innerText = defeat;          
-            }
-            break;
-        case 'even':
-            if (isEven(sum)){
-                winnerParagraph.innerText = victory;
-            } else if (!isEven(sum)) {
-                winnerParagraph.innerText = defeat;
-            }
-            break;
-    }
+    }    
 })
 
 // ° RANDOM NUMBER FUNCTION
