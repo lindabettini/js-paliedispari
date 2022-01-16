@@ -1,0 +1,38 @@
+body {
+  background-color: mediumpurple;
+}
+
+.container-fluid {
+  color: white;
+  font-family: "Amatic SC", cursive;
+  font-size: 30px;
+}
+
+.bg-col {
+  background-color: indigo;
+}
+
+#game-result {
+  display: none;
+}
+
+#game-result.visible {
+  display: flex;
+  flex-direction: row;
+}
+
+#winner-declaration {
+  font-size: 60px;
+  -webkit-text-stroke: 2px yellow;
+  font-family: sans;
+  color: indigo;
+}
+
+#play {
+  padding: 5px 20px;
+  border-radius: 15px;
+  -webkit-box-shadow: 1px 2px 15px 6px yellow;
+  box-shadow: 1px 2px 15px 6px yellow;
+  color: indigo;
+  font-weight: bold;
+}

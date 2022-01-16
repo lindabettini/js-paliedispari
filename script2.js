@@ -12,9 +12,9 @@ const chooseField = document.getElementById('choose');
 const numbField = document.getElementById('gamer-number');
 const cpuParagraph = document.getElementById('cpu-number');
 const playBtn = document.getElementById('play');
+const resultSection = document.getElementById('game-result');
 const sumParagraph = document.getElementById('total');
 const winnerParagraph = document.getElementById('winner-declaration');
-
 
 // ° Other elements
 const min = 1;
@@ -22,8 +22,6 @@ const max = 5;
 
 const victory = 'Hai vinto!';
 const defeat = 'Hai perso!';
-
-
 
 // ° Collego eventi a Play Button
 playBtn.addEventListener('click', function() {
@@ -37,9 +35,9 @@ playBtn.addEventListener('click', function() {
     if (gamerNumber <= 0 || gamerNumber > 5) {
         alert('Numero non valido, inserisci un numero da 1 a 5');
     } else {
+                
+        let sum = cpuNumber + gamerNumber;
         
-        let sum = cpuNumber + gamerNumber;        
-
         // ° Determino il vincitore e stampo in pagina
         switch(chooseValue) {
             case 'odd':
@@ -57,6 +55,8 @@ playBtn.addEventListener('click', function() {
                 }
                 break;
         }
+
+        resultSection.classList.add('visible');
 
     cpuParagraph.innerText = 'Il computer ha giocato:' + ' ' + cpuNumber;
     sumParagraph.innerText = 'Il totale è:' + ' ' + sum;
