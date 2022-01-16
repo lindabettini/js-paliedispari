@@ -22,18 +22,34 @@ let sum = 0;
 
 const cpuNumber = randomNumber(min, max);
 
-let gamerNumber = 0;
+// let gamerNumber = 0;
 
 playBtn.addEventListener('click', function() {
-    gamerNumber = parseInt(numbField.value);
+    const gamerNumber = parseInt(numbField.value);
     console.log('gamer numb:', gamerNumber);
     console.log('cpu numb:', cpuNumber)
     sum = cpuNumber + gamerNumber;
     isEven(sum);
     console.log(sum);
+
+    const chooseValue = chooseField.value;
+
+    switch(chooseValue) {
+        case 'odd':
+            if (!isEven(sum)){
+                console.log('hai vinto!');
+            } else if (isEven(sum)){
+                console.log('hai perso!');            }
+            break;
+        case 'even':
+            if (isEven(sum)){
+                console.log('hai vinto!');
+            } else if (!isEven(sum)) {
+                console.log('hai perso!');
+            }
+            break;
+    }
 })
-
-
 
 // ° RANDOM NUMBER FUNCTION
 function randomNumber(min, max) {
@@ -44,10 +60,8 @@ function randomNumber(min, max) {
 // ° IS EVEN FUNCTION
 function isEven(number) {
     if (number % 2){
-        console.log('il numero è dispari');
         return false;
-    } else {
-        console.log('il numero è pari');
+    } else if (number % 2 === 0){
         return true;
     }
 }
