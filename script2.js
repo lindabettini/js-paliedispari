@@ -11,41 +11,46 @@ todo  Dichiariamo chi ha vinto.
 const chooseField = document.getElementById('choose');
 const numbField = document.getElementById('gamer-number');
 const cpuParagraph = document.getElementById('cpu-number');
-const winnerParagraph = document.getElementById('winner-declaration');
 const playBtn = document.getElementById('play');
+const sumParagraph = document.getElementById('total');
+const winnerParagraph = document.getElementById('winner-declaration');
 
 
 // ° Other elements
 const min = 1;
 const max = 5;
-let sum = 0;
+
+const victory = 'Hai vinto!';
+const defeat = 'Hai perso!';
 
 const cpuNumber = randomNumber(min, max);
 
-// let gamerNumber = 0;
-
+// ° Collego eventi a Play Button
 playBtn.addEventListener('click', function() {
-    const gamerNumber = parseInt(numbField.value);
-    console.log('gamer numb:', gamerNumber);
-    console.log('cpu numb:', cpuNumber)
-    sum = cpuNumber + gamerNumber;
-    isEven(sum);
-    console.log(sum);
 
+    const gamerNumber = parseInt(numbField.value);
     const chooseValue = chooseField.value;
 
+    let sum = cpuNumber + gamerNumber;
+    
+    cpuParagraph.innerText = 'Il computer ha giocato:' + ' ' + cpuNumber;
+    sumParagraph.innerText = 'Il totale è:' + ' ' + sum;
+
+    isEven(sum);
+    // ° Determino il vincitore
     switch(chooseValue) {
         case 'odd':
             if (!isEven(sum)){
-                console.log('hai vinto!');
+                winnerParagraph.innerText = victory;
             } else if (isEven(sum)){
-                console.log('hai perso!');            }
+                winnerParagraph.innerText = defeat;          
+            }
             break;
         case 'even':
             if (isEven(sum)){
-                console.log('hai vinto!');
+                winnerParagraph.innerText = victory;
             } else if (!isEven(sum)) {
-                console.log('hai perso!');
+                winnerParagraph.innerText = defeat;
             }
             break;
     }
