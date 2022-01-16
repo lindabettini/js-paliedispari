@@ -16,6 +16,7 @@ for (let i = userWord.length - 1; i >= 0; i--) {
 }
 console.log(`parola al contrario è: ${reverseUserWord}`);
 
+
 // ° FUNZIONE IS PALINDROMA
 function isPalindroma(word, reverseWord) {
     if (word === reverseWord) {

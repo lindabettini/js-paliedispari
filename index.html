@@ -10,24 +10,24 @@
 
 <body>
 
-    <div id="game">
+    <section id="game">
         <label>Scegli pari o dispari</label>
         <br />
         <select name="choose" id="choose">
             <option value="even">Pari</option>
             <option value="odd">Dispari</option>
         </select>
-
         <br />
-
         <label>"Butta" un numero!</label>
         <br />
-        <input type="number" min="1" max="5">
-
+        <input id="gamer-number" type="number" min="1" max="5">
         <br />
-
-        <button id="play">Gioca</button>
-    </div>
+        <button type="button" id="play">Gioca</button>
+    </section>
+    <section id="game-result">
+        <p id="cpu-number"></p>
+        <p id="winner-declaration"></p>
+    </section>
 
 
 
