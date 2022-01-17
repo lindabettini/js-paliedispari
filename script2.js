@@ -32,7 +32,7 @@ playBtn.addEventListener('click', function() {
     const chooseValue = chooseField.value;
 
     // & Validazione Gamer Number
-    if (gamerNumber <= 0 || gamerNumber > 5 || gamerNumber != '') {
+    if (gamerNumber <= 0 || gamerNumber > 5 || !gamerNumber) {
         alert('Numero non valido, inserisci un numero da 1 a 5');
     } else {
                 
