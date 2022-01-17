@@ -23,6 +23,7 @@ body {
 
 #winner-declaration {
   font-size: 60px;
+  padding: 10px 35px;
   -webkit-text-stroke: 2px yellow;
   font-family: sans;
   color: indigo;
