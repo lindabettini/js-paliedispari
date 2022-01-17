@@ -66,7 +66,7 @@ playBtn.addEventListener('click', function() {
 
 // ° RANDOM NUMBER FUNCTION
 function randomNumber(min, max) {
-    const randomNumber = Math.floor(Math.random() * (max - min)) + min;
+    const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
     return randomNumber;
 }
 
