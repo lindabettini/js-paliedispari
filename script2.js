@@ -43,15 +43,19 @@ playBtn.addEventListener('click', function() {
             case 'odd':
                 if (!isEven(sum)){
                     winnerParagraph.innerText = victory;
+                    winnerParagraph.classList.add('dotted-bord');
                 } else if (isEven(sum)){
-                    winnerParagraph.innerText = defeat;          
+                    winnerParagraph.innerText = defeat;    
+                    winnerParagraph.classList.remove('dotted-bord');      
                 }
                 break;
             case 'even':
                 if (isEven(sum)){
                     winnerParagraph.innerText = victory;
+                    winnerParagraph.classList.add('dotted-bord');
                 } else if (!isEven(sum)) {
                     winnerParagraph.innerText = defeat;
+                    winnerParagraph.classList.remove('dotted-bord');   
                 }
                 break;
         }
